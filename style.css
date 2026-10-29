@@ -1,0 +1,112 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bg-primary-color:rgba(26, 26, 26, 0.834);
+
+  --text-primary-color:rgb(221, 218, 218);
+
+  --bg-snake-color:rgba(238, 242, 239, 0.908);
+
+  --padding:40px;
+
+  --border-color:rgb(221, 218, 218);
+
+  --board-border:rgba(137, 131, 131, 0.71);
+
+}
+/* main{
+  border: 1px solid red;
+
+} */
+
+html,body,main{
+  width: 100%;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+}
+section{
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    /* background-color: rgb(32, 32, 75); */
+    gap: 10px;
+
+
+}
+
+
+section .infos{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
+section .info{
+  padding: 8px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+
+}
+
+section .board{
+   border: 1px solid var(--border-color);
+   flex-grow: 1;
+   display: grid;
+   grid-template-columns: repeat(auto-fill ,minmax(50px,1fr));
+   grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
+
+}
+
+.block{
+
+  border: 1px solid var(--board-border) ;
+  
+}
+
+.fill{
+  background-color: var(--bg-snake-color);
+  
+
+}
+
+.food{
+  background-color: rgb(226, 95, 95);
+
+}
+
+.gamefinish{
+  height: 100vh;
+  width: 100vw;
+  background: transparent;
+ 
+  font-weight: bold;
+  position: fixed;
+  z-index: 55;
+
+}
+.end{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: fixed;
+  z-index: 55;
+  display: none;
+  font-size: 100px;
+ 
+
+}
+
+
