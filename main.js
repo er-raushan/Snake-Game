@@ -24,7 +24,7 @@ let tiktik_timer_value = 0;
 let beginscore = 0;
 score.textContent = beginscore;
 
-tiktik_timer.textContent = tiktik_timer_value + " sec";
+tiktik_timer.textContent = tiktik_timer_value;
 
 
 // local storage setup
@@ -235,7 +235,7 @@ function render(){
     (function duringrestart(){
     modal.style.display="inherit";
     restartbtn.style.display="inherit";
-    stm.textContent="wanna replay"
+    stm.textContent="Wanna replay";
     })()
 
     clearInterval(interval);
@@ -275,8 +275,10 @@ function restartGame(){
     score.textContent = beginscore;
     tiktik_timer.textContent = tiktik_timer_value;
 
-
-
+    tiktik = setInterval(() => {
+        tiktik_timer_value += 1;
+        tiktik_timer.textContent = tiktik_timer_value + " sec";
+    }, 1000);
 
 
 
@@ -312,10 +314,7 @@ function restartGame(){
 
     interval=setInterval(() => {render() }, 300);
 
-    tiktik = setInterval(() => {
-        tiktik_timer_value += 1;
-        tiktik_timer.textContent = tiktik_timer_value + " sec";
-    }, 1000);
+
 
 
 }
